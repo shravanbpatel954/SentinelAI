@@ -82,32 +82,32 @@ SentinelAI leverages a hybrid ensemble of API-based and local deep learning mode
 
 ## 🔄 In-Depth System Working Flow (Digital Safety Framework)
 
-As a comprehensive digital safety framework, SentinelAI operates on a multi-stage, closed-loop workflow that functions seamlessly in the background. Below is the rigorous step-by-step execution flow of our research framework, designed to move from passive detection to active threat mitigation.
+As a complete digital safety framework, SentinelAI acts as a 24/7 background bodyguard. It operates in five clear steps—from detecting suspicious activities to stopping frauds like deepfake calls, counterfeit documents, and phishing links before they happen.
 
-### Phase 1: Proactive Interception & Data Acquisition
-1. **DOM Mutation Observation:** The browser extension continuously monitors for DOM changes on sensitive platforms (e.g., Gmail, web banking portals). It hooks into relevant elements to capture emerging textual threats in real-time.
-2. **Zero-Click Navigation Analysis:** Background scripts intercept all outbound URL navigations. Before a page fully renders, the URL is captured for zero-day threat analysis.
-3. **Multi-Modal Stream Hooking:** For live communications, the framework securely hooks into the `MediaDevices` API, sampling audio and video chunks locally without disrupting the user's communication flow.
+### Phase 1: Proactive Data Collection (Watching for Danger)
+1. **Screen & Email Scanning:** The browser extension silently watches platforms like Gmail and banking sites. It instantly detects suspicious text (e.g., fake "Urgent KYC" emails or Digital Arrest threats) without the user needing to manually copy and paste anything.
+2. **Link & Phishing Interception:** Whenever a link is clicked, the system checks the destination in the background. It catches fake phishing websites (zero-day threats) before they even fully load.
+3. **Live Audio/Video & Image Scanning:** During video/audio calls, or when an image is viewed, the system samples small media chunks securely. This is crucial for catching live voice cloning or counterfeit documents in real-time.
 
-### Phase 2: Secure Payload Orchestration
-1. **Contextual Packaging:** Intercepted data (URLs, email DOM text, media blobs) is packaged with contextual metadata (source, timestamp, interaction type).
-2. **Encrypted Ingestion:** Payloads are securely transmitted to the Unified Backend API (`/api/v1/analyze/full`) via TLS, strictly adhering to privacy-by-design principles (avoiding PII persistence where possible).
+### Phase 2: Secure Data Handling
+1. **Smart Packaging:** The gathered information (a link, email text, a picture, or a voice clip) is packaged with context (when and where it was found).
+2. **Privacy-First Transfer:** The data is sent securely to our Unified Backend API. The system ensures user privacy by never permanently storing personal data (PII).
 
-### Phase 3: AI Ensemble Processing (The Intelligence Core)
-Once data reaches the backend, it is routed to specialized AI models based on its modality:
-1. **Text/Heuristic Pipeline:** Extracted text is fed into LLMs (Gemini 1.5 Pro / Llama-3) to perform semantic and psychological analysis. The model evaluates social engineering triggers (urgency, fear, authority) and maps them to known scam typologies (e.g., Digital Arrest, Fake KYC).
-2. **Acoustic/Voice Analysis:** Audio streams are processed by Wav2Vec2 models to map acoustic features and detect deepfake synthetic voice anomalies, preventing voice cloning scams.
-3. **Visual/Media Forensics:** Videos and images pass through CNNs and Vision Transformers (ViT) to identify facial morphing artifacts, generative AI blending issues, or counterfeit document manipulation.
+### Phase 3: AI Intelligence Core (Analyzing the Threat)
+Once the data reaches the backend, our specialized AI models analyze it in plain sight:
+1. **Text Analysis (Catching Scams):** Smart language models (like Google Gemini) read texts and emails to detect psychological manipulation. They look for words causing fear or urgency, easily identifying scams like Digital Arrests or fake investments.
+2. **Voice & Audio Check (Stopping Deepfakes):** Audio AI analyzes the sound waves of voice calls to detect artificial robotic tones or cloned voices, protecting against family-emergency voice scams.
+3. **Visual & Counterfeit Forensics:** Image-processing AI scans documents and videos. It easily spots if a bank receipt has been edited, if a currency note is a counterfeit, or if a video caller's face is a generated deepfake.
 
-### Phase 4: Threat Synthesis & Verdict Generation
-1. **Multi-Vector Aggregation:** The Threat Intelligence Model aggregates the outputs from the independent AI classifiers.
-2. **Behavioral Fingerprinting:** The system generates a "Scam Behavior Vector"—a mathematical representation of the attack—and compares it against the historical Knowledge Graph using similarity engines.
-3. **Verdict Calculation:** A final confidence score is generated. If the score surpasses the critical threshold, the threat is flagged as active.
+### Phase 4: Final Decision Making
+1. **Combining Evidence:** The Threat Intelligence Model looks at all the clues together (e.g., bad text + fake audio = high danger).
+2. **Scam Fingerprinting:** It creates a "Scam Profile" and compares it to our database of known frauds (our Knowledge Graph).
+3. **Scoring the Danger:** A final "threat score" is calculated. If the score is too high, the system declares it an active cyber attack.
 
-### Phase 5: Proactive Prevention & Feedback Loop
-1. **Real-Time Intervention:** The backend instantly sends a blocking signal to the browser extension.
-2. **UI Injection:** The extension injects high-visibility warning overlays directly into the DOM (e.g., a red banner natively injected into Gmail, or a full-page blocking modal for malicious URLs), halting the user before they can interact with the threat.
-3. **Knowledge Graph Evolution:** Anonymized threat vectors are stored in the MongoDB Knowledge Graph, allowing the framework to self-adapt and mutate its defensive strategies against future zero-day attacks.
+### Phase 5: Action & Prevention (Stopping the Attack)
+1. **Instant Blocking:** The backend immediately alerts the browser extension.
+2. **On-Screen Warnings:** The extension throws a massive, unmissable red warning directly on your screen (like a banner inside your email or a block-page on a dangerous website), stopping you from losing money or data.
+3. **Getting Smarter:** The anonymous details of this new attack are saved in our database. The AI learns from this, becoming even faster at stopping similar future attacks.
 
 ---
 
