@@ -21,10 +21,10 @@ The following diagram illustrates how the proactive framework intercepts data ac
 graph TD
     %% Proactive Interception
     subgraph Shield["Proactive Browser Shield (Extension)"]
-        A[URL Navigation] -->|Intercept| B[URL Risk Analyzer]
-        C[Gmail / Webmail DOM] -->|Observe Mutations| D[Content Scanner]
-        E[Images / PDFs] -->|Context Menu Hook| F[Media Scanner]
-        G[Video / Audio Calls] -->|MediaDevices API| H[Live Stream Scanner]
+        A[URL Navigation] -->|Intercept| B[Phishing Link Analyzer]
+        C[Gmail / Webmail DOM] -->|Observe Mutations| D[Scam Text Scanner]
+        E[Images / PDFs] -->|Context Menu Hook| F[Document & Receipt Scanner]
+        G[Video / Audio Calls] -->|MediaDevices API| H[Live Deepfake Scanner]
     end
 
     %% Unified Backend Pipeline
@@ -33,24 +33,24 @@ graph TD
     end
 
     %% Model Ensemble
-    subgraph AIEnsemble["Specialized AI Model Ensemble"]
-        I -->|Text/Emails| J[Gemini 1.5 Pro / Flash or Llama-3-8B]
-        I -->|Audio Stream| K[Wav2Vec2 PyTorch Classifier]
-        I -->|Video Stream| L[ViT / MesoNet Artifact Detector]
-        I -->|Images/Docs| M[naklinote CNN + OCR + YOLOv8]
+    subgraph AIEnsemble["AI Intelligence Core (Analyzing the Threat)"]
+        I -->|Text/Emails| J["Language AI (Catches Scam Texts)"]
+        I -->|Audio Stream| K["Audio AI (Stops Voice Cloning)"]
+        I -->|Video Stream| L["Visual AI (Detects Video Deepfakes)"]
+        I -->|Images/Docs| M["Forensic AI (Spots Counterfeit Documents)"]
     end
 
     %% Structuring
-    subgraph Intelligence["Threat Intelligence Core"]
+    subgraph Intelligence["Threat Synthesis & Decision"]
         J & K & L & M -->|Extracted Findings| N[Threat Intelligence Model]
-        N -->|Generate Fingerprint| O[Scam Behavior Vector]
-        O -->|Adaptive Evolution| P[Similarity & Mutation Engine]
+        N -->|Combine Evidence| O[Generate Scam Profile]
+        O -->|Compare with Database| P[Scoring & Verdict Engine]
     end
 
     %% Prevention
-    subgraph Action["Proactive Prevention"]
-        P -->|Real-time Verdict| Q[Inject Warning Overlay on Page]
-        P -->|Historical Save| R[(MongoDB Knowledge Graph)]
+    subgraph Action["Action & Prevention (Stopping the Attack)"]
+        P -->|High Threat Score| Q["Inject Red Warning / Block Page"]
+        P -->|Learn from Attack| R[("Threat Knowledge Graph (MongoDB)")]
     end
     
     style Shield fill:#f9f,stroke:#333,stroke-width:2px
